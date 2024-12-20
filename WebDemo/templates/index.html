@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flask Web App</title>
+    <!-- 引入Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">多模态医学分析模型</h1>
+        <div class="row">
+            <div class="col-md-6">
+                {% if image_url %}
+                    <label>图像:</label>
+                    <div class="image-container">
+                        <img src="{{ image_url }}" alt="Uploaded Image" class="custom-image">
+                    </div>
+                {% endif %}
+            </div>
+        
+            <div class="col-md-5">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="input_text">输入提示:</label>
+                        <textarea id="input_text" name="input_text" class="form-control" rows="4" cols="50" placeholder="请输入文本...">{{ input_text }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="file">上传图像:</label>
+                        <input type="file" id="file" name="file" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+                <div class="output mt-4">
+                    {% if output_text %}
+                    <h3>模型输出:</h3>
+                    <div class="form-group">
+                        <textarea id="output_text" readonly rows="4" class="form-control" cols="50" oninput="adjustHeight(this)">{{ output_text }}</textarea>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
