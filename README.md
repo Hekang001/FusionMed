@@ -13,7 +13,7 @@ For quick start, you can check the `WebDemo/` path.
 We demonstrate a simple diagnosis case here to show how to inference with our model.   
 Feel free to modify it as you want.
 
-- S1. Download [Model checkpoint](https://huggingface.co/chaoyi-wu/RadFM) (No need for decompressing).
+- S1. Download [Model checkpoint](https://pan.xunlei.com/s/VOEWWw-hPSWx_-SK6OAy4gQtA1?pwd=dxq2#) (No need for decompressing).
 - S2. Decompress the original zip file, you can get a  `pytorch_model.bin`.
 - S3. put `pytorch_model.bin` under path `WebDemo/` and change the path to load the model checkpoint.
 - S4. python `app.py` and you can get a conversation as:   
@@ -28,7 +28,7 @@ For re-training a model on our dataset or large-scale testing our pre-train mode
 
 Simply, ```train.py``` for training and ```test.py``` for testing.
 
-* Check the [data_csv](https://huggingface.co/datasets/chaoyi-wu/RadFM_data_csv) to get how different datasets are processed and download them into `src/Dataset/data_csv` 
+* Check the [FusionMed_data_csv](https://huggingface.co/datasets/AndrewKing/FusionMed_data) to get how different datasets are processed and download them into `src/Dataset/data_csv` 
 * Modify the path as you disire, and check ```src/train.py``` to pre-train or ```src/train.py``` to test.
 
 ## Case Study:
