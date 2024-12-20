@@ -21,8 +21,6 @@ Feel free to modify it as you want.
     > Input: <img src="fig/2.jpg" style="width:15px;"/> Can you identify any visible signs of Cardiomegaly in the image?    
     > Output: yes 
 
-By the way, never try to perform this in cpu and gpu is all you need :）.
-
 ## Pre-train:
 For re-training a model on our dataset or large-scale testing our pre-train model, you can check ```src```.
 
